@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import clock from "../../assets/clock.png";
 import fire from "../../assets/Fire.png";
 import './Recipe.css'
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, handleAddToSidebar}) => {
     const {recipe_image,recipe_name,short_description,ingredients,preparing_time,calories}= recipe;
   return (
     <div>
@@ -35,7 +35,7 @@ const Recipe = ({recipe}) => {
           </div>
 
           <div className="card-actions mt-6">
-            <button className="btn bg-[#0BE58A] text-lg font-medium rounded-3xl px-6 title-color">Want to Cook</button>
+            <button onClick={() => handleAddToSidebar(recipe)} className="btn bg-[#0BE58A] text-lg font-medium rounded-3xl px-6 title-color">Want to Cook</button>
           </div>
         </div>
       </div>
@@ -44,6 +44,7 @@ const Recipe = ({recipe}) => {
 };
 
 Recipe.propTypes ={
-    recipe: PropTypes.object.isRequired
+    recipe: PropTypes.object.isRequired,
+    handleAddToSidebar: PropTypes.func
 }
 export default Recipe;
