@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 function App() {
   
    const [wantToCook, setWantToCook] = useState([]);
+   const [currentCook, setCurrentCook] = useState([]);
    
 
    const handleAddToSidebar = (recipe) => {
@@ -25,11 +26,14 @@ function App() {
        
    }
 
+   
+
    const handleRemoveToCooking = (id) =>{
-    console.log(id)
+    const currentCooking = wantToCook.filter(item => item.recipe_id == id);
+    setCurrentCook(prevCurrentCook => [...prevCurrentCook, ...currentCooking]);
     const newWantToCook = wantToCook.filter(item => item.recipe_id != id);
     setWantToCook(newWantToCook);
-   }
+  }
 
   return (
     <>
@@ -42,7 +46,7 @@ function App() {
           </div>
           <div className='mt-10 lg:flex'>
             <Recipes handleAddToSidebar={handleAddToSidebar}></Recipes>
-            <Sidebar wantToCook={wantToCook} handleRemoveToCooking={handleRemoveToCooking} ></Sidebar>
+            <Sidebar wantToCook={wantToCook} handleRemoveToCooking={handleRemoveToCooking} currentCook={currentCook} ></Sidebar>
           </div>
       </div>
       <ToastContainer />

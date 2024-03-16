@@ -4,14 +4,14 @@ const InSidebar = ({ wantToCook,index,handleRemoveToCooking }) => {
   const { recipe_name, preparing_time, calories,recipe_id } = wantToCook;
   return (
     
-      <tr>
+      <tr className="text-[#282828B2] font-fira-sans font-medium">
         {/* <!-- row 1 --> */}
 
         <th>{index+1}</th>
         <td>{recipe_name}</td>
         <td>{preparing_time}</td>
         <td>{calories}</td>
-        <td><button onClick={() => handleRemoveToCooking(recipe_id) } className="btn bg-[#0BE58A] text-lg font-medium rounded-3xl px-6 title-color">Preparing</button></td>
+        <td><button onClick={() => handleRemoveToCooking(recipe_id)} className="btn bg-[#0BE58A] text-lg font-medium rounded-3xl px-6 title-color">Preparing</button></td>
         
       </tr>
       
