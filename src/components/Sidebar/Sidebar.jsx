@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import InSidebar from "../InSidebar/InSidebar";
 
-const Sidebar = ({ wantToCook }) => {
+
+const Sidebar = ({ wantToCook,handleRemoveToCooking }) => {
+    
+   
+
   return (
     <div className="md:w-5/12 p-6 lg:ml-6 border border-[#28282833] rounded-2xl">
       <h1 className="text-2xl font-semibold title-color text-center mt-8">
@@ -21,11 +25,15 @@ const Sidebar = ({ wantToCook }) => {
             </tr>
           </thead>
           <tbody>
-            {wantToCook.map((wantToCook) => (
+            {wantToCook.map((wantToCook,index) => (
+                
               <InSidebar
                 key={wantToCook.recipe_id}
                 wantToCook={wantToCook}
+                index={index}
+                handleRemoveToCooking={handleRemoveToCooking}
               ></InSidebar>
+              
             ))}
           </tbody>
         </table>
@@ -47,10 +55,11 @@ const Sidebar = ({ wantToCook }) => {
             </tr>
           </thead>
           <tbody>
-            {wantToCook.map((wantToCook) => (
+            {wantToCook.map((wantToCook,index) => (
               <InSidebar
                 key={wantToCook.recipe_id}
                 wantToCook={wantToCook}
+                index={index}
               ></InSidebar>
             ))}
           </tbody>
@@ -63,5 +72,6 @@ const Sidebar = ({ wantToCook }) => {
 
 Sidebar.propTypes = {
   wantToCook: PropTypes.array,
+  handleRemoveToCooking: PropTypes.func
 };
 export default Sidebar;

@@ -45,6 +45,7 @@ const Recipe = ({recipe, handleAddToSidebar}) => {
 
 Recipe.propTypes ={
     recipe: PropTypes.object.isRequired,
-    handleAddToSidebar: PropTypes.func
+    handleAddToSidebar: PropTypes.func,
+    index: PropTypes.number
 }
 export default Recipe;

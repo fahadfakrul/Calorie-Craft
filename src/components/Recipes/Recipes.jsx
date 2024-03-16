@@ -15,8 +15,8 @@ const Recipes = ({handleAddToSidebar}) => {
     return (
         <div className="md:w-7/12 p-6 gap-6 grid grid-cols-1 md:grid-cols-2 border border-[#28282833] rounded-2xl">
             {
-                recipes.map(recipe => <Recipe key={recipe.recipe_id}
-                recipe={recipe} handleAddToSidebar={handleAddToSidebar} ></Recipe>)
+                recipes.map((recipe) => <Recipe key={recipe.recipe_id}
+                recipe={recipe} handleAddToSidebar={handleAddToSidebar}  ></Recipe>)
                 
             }
         </div>

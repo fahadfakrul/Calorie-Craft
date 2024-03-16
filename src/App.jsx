@@ -10,6 +10,7 @@ import { ToastContainer, toast } from 'react-toastify';
 function App() {
   
    const [wantToCook, setWantToCook] = useState([]);
+   
 
    const handleAddToSidebar = (recipe) => {
        
@@ -17,10 +18,17 @@ function App() {
        if(!isExist){
         
            setWantToCook([...wantToCook,recipe]);
+          
        }else{
-        toast('Already Exist');
+        toast('Already Exist!');
        }
        
+   }
+
+   const handleRemoveToCooking = (id) =>{
+    console.log(id)
+    const newWantToCook = wantToCook.filter(item => item.recipe_id != id);
+    setWantToCook(newWantToCook);
    }
 
   return (
@@ -34,7 +42,7 @@ function App() {
           </div>
           <div className='mt-10 lg:flex'>
             <Recipes handleAddToSidebar={handleAddToSidebar}></Recipes>
-            <Sidebar wantToCook={wantToCook}></Sidebar>
+            <Sidebar wantToCook={wantToCook} handleRemoveToCooking={handleRemoveToCooking} ></Sidebar>
           </div>
       </div>
       <ToastContainer />
