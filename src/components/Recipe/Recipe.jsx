@@ -16,7 +16,7 @@ const Recipe = ({recipe, handleAddToSidebar}) => {
         </figure>
         <div className="card-body font-fira-sans">
           <h2 className="card-title text-xl font-semibold text-[#282828]">{recipe_name}</h2>
-          <p className="text-[#878787] font-normal mt-4">{short_description}</p>
+          <p className="text-[#878787] font-normal mt-4">{short_description.slice(0,64)}</p>
           <h4 className="text-[#282828] text-lg font-medium mt-10">Ingredients:{ingredients.length}</h4>
           <ul className="list-disc text-[#878787] text-lg font-normal mt-4">
             <li>{ingredients[0]}</li>

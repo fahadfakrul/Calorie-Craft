@@ -4,14 +4,23 @@ import Banner from './components/Banner/Banner'
 import Header from './components/Header/Header'
 import Recipes from './components/Recipes/Recipes'
 import Sidebar from './components/Sidebar/Sidebar'
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   
    const [wantToCook, setWantToCook] = useState([]);
 
-   const handleAddToSidebar = recipe => {
-       const newWantToCook = [...wantToCook, recipe];
-       setWantToCook(newWantToCook);
+   const handleAddToSidebar = (recipe) => {
+       
+       const isExist=wantToCook.find(item => item.recipe_id == recipe.recipe_id );
+       if(!isExist){
+        
+           setWantToCook([...wantToCook,recipe]);
+       }else{
+        toast('Already Exist');
+       }
+       
    }
 
   return (
@@ -28,6 +37,7 @@ function App() {
             <Sidebar wantToCook={wantToCook}></Sidebar>
           </div>
       </div>
+      <ToastContainer />
     </>
   )
 }
