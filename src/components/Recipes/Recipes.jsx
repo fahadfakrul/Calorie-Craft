@@ -6,7 +6,7 @@ const Recipes = ({handleAddToSidebar}) => {
    const [recipes,setrecipes] = useState([]);
 
     useEffect(() => {
-        fetch("../../../public/recipes.json")
+        fetch("/recipes.json")
         .then((res) => res.json())
         .then((data) => setrecipes(data));
     },[]);
