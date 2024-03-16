@@ -10,7 +10,8 @@ function App() {
    const [wantToCook, setWantToCook] = useState([]);
 
    const handleAddToSidebar = recipe => {
-    console.log(recipe)
+       const newWantToCook = [...wantToCook, recipe];
+       setWantToCook(newWantToCook);
    }
 
   return (
@@ -24,7 +25,7 @@ function App() {
           </div>
           <div className='mt-10 lg:flex'>
             <Recipes handleAddToSidebar={handleAddToSidebar}></Recipes>
-            <Sidebar></Sidebar>
+            <Sidebar wantToCook={wantToCook}></Sidebar>
           </div>
       </div>
     </>
