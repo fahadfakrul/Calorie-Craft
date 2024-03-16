@@ -1,24 +1,24 @@
-
 import './App.css'
+import Banner from './components/Banner/Banner'
+import Header from './components/Header/Header'
+import Recipes from './components/Recipes/Recipes'
 
 function App() {
   
 
   return (
     <>
-      
-      <h1 className='text-6xl bg-red-500'>Vite + React</h1>
-      <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">Shoes!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div className="card-actions justify-end">
-      <button className="btn btn-primary">Buy Now</button>
-    </div>
-  </div>
-</div>
-     
+      <Header></Header> 
+      <Banner></Banner>
+      <div className='container mx-auto my-8 lg:my-24'>
+          <div className='text-center'>
+            <h1 className='title-color text-4xl font-semibold mb-6'>Our Recipes</h1>
+            <p className='secondary-color font-normal'>Explore our diverse collection of delicious recipes crafted <br /> to satisfy every palate and culinary craving. <br /> Bon appétit awaits!</p>
+          </div>
+          <div className='mt-10 '>
+            <Recipes></Recipes>
+          </div>
+      </div>
     </>
   )
 }
