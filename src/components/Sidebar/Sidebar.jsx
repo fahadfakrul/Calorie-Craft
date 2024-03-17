@@ -20,8 +20,8 @@ const Sidebar = ({ wantToCook,handleRemoveToCooking,currentCook}) => {
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Time</th>
+              <th>Calories</th>
               <th></th>
             </tr>
           </thead>
@@ -51,8 +51,8 @@ const Sidebar = ({ wantToCook,handleRemoveToCooking,currentCook}) => {
             <tr>
               <th></th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Time</th>
+              <th>Calories</th>
               
             </tr>
           </thead>
